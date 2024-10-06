@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>python</title>
+    <!-- 引入Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<!-- 自适应导航栏 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">AGIAgent导航站</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://agiagent.feishu.cn/">AGIAgent知识库</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                   aria-expanded="false">
+                    服务
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="https://www.waytoagi.com/events">AI活动</a></li>
+                    <li><a class="dropdown-item" href="https://www.waytoagi.com/sites">AI网站</a></li>
+                    <li><a class="dropdown-item" href="https://www.waytoagi.com/agents">AI智能体</a></li>
+                    <li><a class="dropdown-item" href="https://www.waytoagi.com/prompts">AI提示词</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- 搜索框 -->
+        <form class="d-flex" id="searchForm">
+            <input class="form-control me-2" type="search" id="searchInput" placeholder="搜索网站内容" aria-label="搜索">
+            <button class="btn btn-outline-success" type="submit">搜索</button>
+        </form>
+    </div>
+</nav>
+
+
+
+<!-- 自适应 Tabs 标签页 -->
+<div class="container-fluid mt-4">
+    <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="pills-feature-tab" data-bs-toggle="pill" href="#pills-feature" role="tab"
+               aria-controls="pills-feature" aria-selected="true">精选</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">文本</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#pills-writing" id="pills-writing-tab" data-bs-toggle="pill">写作</a>
+                </li>
+                <li><a class="dropdown-item" href="#pills-translation" id="pills-translation-tab" data-bs-toggle="pill">翻译</a>
+                </li>
+                <li><a class="dropdown-item" href="#pills-rewrite" id="pills-rewrite-tab" data-bs-toggle="pill">改写</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">图片</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#pills-remove-watermark" id="pills-remove-watermark-tab"
+                       data-bs-toggle="pill">去水印</a></li>
+                <li><a class="dropdown-item" href="#pills-change-background" id="pills-change-background-tab"
+                       data-bs-toggle="pill">换背景</a></li>
+            </ul>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">音频</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#pills-voice-changer" id="pills-voice-changer-tab"
+                       data-bs-toggle="pill">变音器</a></li>
+                <li><a class="dropdown-item" href="#pills-audio-to-text" id="pills-audio-to-text-tab"
+                       data-bs-toggle="pill">音生文</a></li>
+            </ul>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">视频</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#pills-video-translation" id="pills-video-translation-tab"
+                       data-bs-toggle="pill">视频翻译</a></li>
+                <li><a class="dropdown-item" href="#pills-audio-extraction" id="pills-audio-extraction-tab"
+                       data-bs-toggle="pill">音频提取</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- 标签页内容 -->
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-feature" role="tabpanel" aria-labelledby="pills-feature-tab">
+            <h3>精选工具</h3>
+            <p>热门写作工具、图像增强、视频编辑、音频转换。</p>
+        </div>
+        <div class="tab-pane fade" id="pills-writing" role="tabpanel" aria-labelledby="pills-writing-tab">
+            <h3>写作工具</h3>
+            <p>高效的写作工具，提高你的写作速度。</p>
+        </div>
+        <div class="tab-pane fade" id="pills-translation" role="tabpanel" aria-labelledby="pills-translation-tab">
+            <h3>翻译工具</h3>
+            <p>提供精准的翻译服务。</p>
+        </div>
+        <div class="tab-pane fade" id="pills-rewrite" role="tabpanel" aria-labelledby="pills-rewrite-tab">
+            <h3>改写工具</h3>
+            <p>帮助你重新组织和优化文章内容。</p>
+        </div>
+        <div class="tab-pane fade" id="pills-remove-watermark" role="tabpanel"
+             aria-labelledby="pills-remove-watermark-tab">
+            <h3>去水印工具</h3>
+            <p>轻松移除图片中的水印。</p>
+        </div>
+        <div class="tab-pane fade" id="pills-change-background" role="tabpanel"
+             aria-labelledby="pills-change-background-tab">
+            <h3>换背景工具</h3>
+            <p>快速替换图片的背景。</p>
+        </div>
+        <div class="tab-pane fade" id="pills-voice-changer" role="tabpanel" aria-labelledby="pills-voice-changer-tab">
+            <h3>变音器工具</h3>
+            <p>改变你的声音风格，适用于各种场景。</p>
+        </div>
+        <div class="tab-pane fade" id="pills-audio-to-text" role="tabpanel" aria-labelledby="pills-audio-to-text-tab">
+            <h3>音生文工具</h3>
+            <p>将音频内容转换为文本。</p>
+        </div>
+        <div class="tab-pane fade" id="pills-video-translation" role="tabpanel"
+             aria-labelledby="pills-video-translation-tab">
+            <h3>视频翻译工具</h3>
+            <p>提供视频内容的翻译服务。</p>
+        </div>
+        <div class="tab-pane fade" id="pills-audio-extraction" role="tabpanel"
+             aria-labelledby="pills-audio-extraction-tab">
+            <h3>音频提取工具</h3>
+            <p>从视频中提取音频内容。</p>
+        </div>
+    </div>
+</div>
+
+<!-- 引入 Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- 搜索功能的 JS -->
+<script>
+    document.getElementById('searchForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // 阻止表单提交
+        var searchTerm = document.getElementById('searchInput').value.toLowerCase(); // 获取搜索框内容并转为小写
+        var items = document.querySelectorAll('.search-item'); // 获取所有要搜索的元素
+        items.forEach(function (item) {
+            if (item.textContent.toLowerCase().includes(searchTerm)) {
+                item.classList.remove('d-none'); // 显示匹配项
+            } else {
+                item.classList.add('d-none'); // 隐藏不匹配项
+            }
+        });
+    });
+</script>
+</body>
+</html>
