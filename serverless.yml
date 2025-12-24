@@ -1,0 +1,31 @@
+component: scf
+name: fund-dashboard
+inputs:
+  name: fund-dashboard
+  src:
+    src: ./
+    exclude:
+      - .env
+      - .gitignore
+      - README.md
+  runtime: Python3.8
+  region: ap-guangzhou
+  handler: scf_bootstrap.main_handler
+  memorySize: 128
+  timeout: 30
+  environment:
+    variables:
+      SECRET_KEY: "your-secret-key-here"
+      UPLOAD_PASSWORD: "admin"
+  triggers:
+    - type: apigw
+      name: fund_apigw
+      protocols:
+        - http
+        - https
+      environment: release
+      endpoints:
+        - path: /
+          method: ANY
+        - path: /{path+}
+          method: ANY
